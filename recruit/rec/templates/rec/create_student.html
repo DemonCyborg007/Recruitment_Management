@@ -1,0 +1,7 @@
+<h2>Create Student</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create</button>
+</form>
+<a href="{% url 'facilitator_dashboard' %}">Back to Dashboard</a>

@@ -1,0 +1,18 @@
+<h2>Facilitator Dashboard</h2>
+<a href="{% url 'create_student' %}">Create Student</a>
+<a href="{% url 'create_placement_drive' %}">Create Placement Drive</a>
+<a href="{% url 'bulk_upload_students' %}">Bulk Upload Students</a>
+<h3>Students</h3>
+<ul>
+    {% for student in students %}
+    <li>{{ student.user.username }} - {{ student.email }} - {{student.id}}</li>
+    <a href="{% url 'view_student_applications' student.id %}">View Applications</a>
+    {% endfor %}
+</ul>
+<h3>Placement Drives</h3>
+<ul>
+    {% for drive in placement_drives %}
+    <li>{{ drive.company_name }} - {{ drive.job_role }} on {{ drive.date }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'logout' %}">Logout</a>

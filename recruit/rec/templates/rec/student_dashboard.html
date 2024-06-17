@@ -1,0 +1,19 @@
+<h2>Student Dashboard</h2>
+<div class="profile-section">
+    {% if student.profile_picture %}
+        <img src="{{ student.profile_picture.url }}" alt="Profile Picture" style="width: 100px; height: 100px;">
+    {% else %}
+        <p>No profile picture uploaded.</p>
+    {% endif %}
+    <h3>{{ student.name }}</h3>
+</div>
+<h3>Upcoming Placement Drives</h3>
+<ul>
+    {% for drive in placement_drives %}
+    <li>{{ drive.company_name }} - {{ drive.job_role }} on {{ drive.date }}</li>
+    <a href="{% url 'apply_to_placement_drive' drive.id %}">Apply</a>
+    {% endfor %}
+</ul>
+<a href="{% url 'update_student_profile' %}">Update Profile</a>
+<a href="{% url 'student_application_history' %}">View Application History</a>
+<a href="{% url 'logout' %}">Logout</a>

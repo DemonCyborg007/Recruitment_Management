@@ -1,0 +1,6 @@
+<h1>Apply to {{ drive.company_name }} - {{ drive.job_role }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Apply</button>
+</form>

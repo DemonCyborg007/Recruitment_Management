@@ -1,0 +1,8 @@
+<h1>Applications for {{ student.name }}</h1>
+<ul>
+    {% for application in applications %}
+    <li>
+        Applied to {{ application.drive.company_name }} - {{ application.drive.job_role }} on {{ application.applied_at }}
+    </li>
+    {% endfor %}
+</ul>

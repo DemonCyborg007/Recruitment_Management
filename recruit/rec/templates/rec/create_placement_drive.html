@@ -1,0 +1,7 @@
+<h2>Create Placement Drive</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create</button>
+</form>
+<a href="{% url 'facilitator_dashboard' %}">Back to Dashboard</a>
